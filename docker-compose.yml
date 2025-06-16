@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: spycats_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: spy_user
+      POSTGRES_PASSWORD: sonoma89
+      POSTGRES_DB: spy_cats_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
