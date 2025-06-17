@@ -56,7 +56,7 @@ def api_create_cat(cat: CatCreate, db: Session = Depends(get_db)):
         cat_out = CatOut.from_orm(created_cat)
         return success_response(
             message="Spy cat created successfully",
-            data=cat_out.dict(),  # <-- convert to dict here
+            data=cat_out.dict(),
             status_code=status.HTTP_201_CREATED,
         )
     except ValueError as e:
